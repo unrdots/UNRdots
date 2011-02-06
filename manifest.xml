@@ -1,0 +1,21 @@
+<package>
+  <description brief="ardrone_unr_team6">
+
+     ardrone_unr_team6
+
+  </description>
+  <author>Torbjorn Loken</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ardrone_unr_team6</url>
+  <depend package="roscpp"/>
+  <depend package="geometry_msgs"/>
+  <depend package="std_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="opencv2"/>
+  <depend package="cv_bridge"/>
+  <depend package="image_transport"/>
+
+</package>
+
+

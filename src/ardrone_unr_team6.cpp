@@ -129,24 +129,22 @@ void findColor(IplImage* frameIn, IplImage* segFrame, int &r, int &c)
 		cTmp = cQueue.front();
 		cQueue.pop();
 
-		for (i = rTmp - 1; i <= rTmp + 1; i++)
-			for (j = cTmp - 1; j <= cTmp + 1; j++)
-			{
-				if (!(i < 0 || i >= h || j < 0 || j >= w))
+		for (i = rTmp - 1; i <= rTmp + 1; i++) {
+			for (j = cTmp - 1; j <= cTmp + 1; j++) {
+				if (!(i < 0 || i >= h || j < 0 || j >= w)) {
 					if (dataOut[i*step + j*ch + 0] != 1)
 					{
 						if (dataIn[i*step + j*ch + 2] -
 								dataIn[i*step + j*ch + 1] -
-								dataIn[i*step + j*ch + 0] > threshLo)
-						{
+								dataIn[i*step + j*ch + 0] > threshLo) {
 							rQueue.push(i);
 							cQueue.push(j);
 							dataOut[i*step + j*ch + 0] = 1;
 						}
-
 					}
+				}
 			}
-
+		}
 	}
 
 	//Find the largest cluster
